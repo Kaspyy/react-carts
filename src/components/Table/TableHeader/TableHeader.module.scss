@@ -1,0 +1,11 @@
+.table_header {
+  display: flex;
+  width: 83%;
+  justify-content: space-between;
+  font-weight: 600;
+
+  :nth-child(1) {
+    width: 65%;
+    text-align: left;
+  }
+}

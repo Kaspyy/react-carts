@@ -1,0 +1,30 @@
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

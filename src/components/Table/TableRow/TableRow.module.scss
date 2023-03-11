@@ -1,0 +1,33 @@
+.table_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.3rem 0 0 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product_column {
+  width: 80%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+// mamy dwa spany w .price_column, chcę by ten z discount price był nad normal price i posiadał bardziej szary kolor czcionki oraz był przekreślony, tylko pierwszy span
+
+.price_column {
+  width: 20%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.2rem;
+
+  :first-child {
+    color: #9e9e9e;
+    text-decoration: line-through;
+    font-size: 0.8rem;
+  }
+}

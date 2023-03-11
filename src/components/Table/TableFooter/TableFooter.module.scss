@@ -1,0 +1,12 @@
+.table_footer {
+  width: 83%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table_footer .total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}

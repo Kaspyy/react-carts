@@ -1,0 +1,78 @@
+.primary {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #2684ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0062cc;
+  }
+
+  &:active {
+    background-color: #004ba0;
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+}
+
+.primary.danger {
+  background-color: #f44336;
+  color: #fff;
+
+  &:hover {
+    background-color: #d32f2f;
+  }
+
+  &:active {
+    background-color: #b71c1c;
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  background-color: #fff;
+  color: #2684ff;
+  border: 1px solid #2684ff;
+
+  &:hover {
+    background-color: #e3f2fd;
+  }
+
+  &:active {
+    background-color: #bbdefb;
+  }
+
+  &:disabled {
+    background-color: #fff;
+    color: #9e9e9e;
+    border: 1px solid #e0e0e0;
+    cursor: not-allowed;
+  }
+}
+
+.secondary.danger {
+  background-color: #fff;
+  color: #f44336;
+  border: 1px solid #f44336;
+
+  &:hover {
+    background-color: #ffcdd2;
+  }
+
+  &:active {
+    background-color: #ef9a9a;
+  }
+}
