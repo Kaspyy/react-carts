@@ -9,8 +9,7 @@ import styles from './CartPage.module.scss';
 const CartPage = () => {
   const { cartId } = useParams();
   const navigate = useNavigate();
-  const { modalOpen } = useAppSelector(state => state.modal);
-  // useappselector and fetch cart by cartid
+  const chartModalOpen = useAppSelector(state => state.modal.chartModalOpen);
   const cartData = useAppSelector(state =>
     state.carts.data.carts.find(cart => cart.id.toString() === cartId)
   );
@@ -27,7 +26,7 @@ const CartPage = () => {
   return (
     <>
       <Chart chartData={cartData} />
-      <div className={`${styles.container} ${modalOpen && styles.blur}`}>
+      <div className={`${styles.container} ${chartModalOpen && styles.blur}`}>
         <div className={styles.header_container}>
           <div className={styles.title}>
             <h2>Cart {cartId}</h2>

@@ -10,7 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import Modal from 'react-modal';
-import { closeModal } from '../../redux/features/modalSlice';
+import { closeChartModal } from '../../redux/features/modalSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import Button from '../Button/Button';
 import styles from './Chart.module.scss';
@@ -34,7 +34,7 @@ export interface ChartProps {
 }
 
 const Chart = ({ chartData }: ChartProps) => {
-  const { modalOpen } = useAppSelector(state => state.modal);
+  const { chartModalOpen } = useAppSelector(state => state.modal);
   const dispatch = useAppDispatch();
 
   const labels = [
@@ -60,12 +60,12 @@ const Chart = ({ chartData }: ChartProps) => {
   };
 
   const handleCloseModal = () => {
-    dispatch(closeModal());
+    dispatch(closeChartModal());
   };
 
   return (
     <Modal
-      isOpen={modalOpen}
+      isOpen={chartModalOpen}
       onRequestClose={handleCloseModal}
       contentLabel='Price Chart Modal'
       className={styles.modal}

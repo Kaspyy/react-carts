@@ -1,26 +1,39 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface ModalState {
-  modalOpen: boolean;
+  chartModalOpen: boolean;
+  removeCartModalOpenId: number | null;
 }
 
 const initialState: ModalState = {
-  modalOpen: false,
+  chartModalOpen: false,
+  removeCartModalOpenId: 0,
 };
 
 export const modalSlice = createSlice({
   name: 'modal',
   initialState,
   reducers: {
-    openModal: state => {
-      state.modalOpen = true;
+    openChartModal: state => {
+      state.chartModalOpen = true;
     },
-    closeModal: state => {
-      state.modalOpen = false;
+    closeChartModal: state => {
+      state.chartModalOpen = false;
+    },
+    openRemoveCartModal: (state, action) => {
+      state.removeCartModalOpenId = action.payload;
+    },
+    closeRemoveCartModal: state => {
+      state.removeCartModalOpenId = null;
     },
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
+export const {
+  openChartModal,
+  closeChartModal,
+  openRemoveCartModal,
+  closeRemoveCartModal,
+} = modalSlice.actions;
 
 export default modalSlice.reducer;
