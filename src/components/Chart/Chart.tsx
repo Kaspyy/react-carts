@@ -17,8 +17,6 @@ import styles from './Chart.module.scss';
 import { options } from './config';
 import { Cart } from '../../types/carts';
 
-Modal.setAppElement('#root');
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
