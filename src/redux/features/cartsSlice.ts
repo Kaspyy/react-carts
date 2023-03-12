@@ -25,6 +25,17 @@ export const fetchCarts = createAsyncThunk<Carts>(
   }
 );
 
+export const removeCart = createAsyncThunk(
+  'carts/removeCart',
+  async (id: number) => {
+    const response = await fetch(`https://dummyjson.com/carts/${id}`, {
+      method: 'DELETE',
+    });
+    const data = await response.json();
+    return data;
+  }
+);
+
 export const cartsSlice = createSlice({
   name: 'cart',
   initialState,
@@ -47,6 +58,19 @@ export const cartsSlice = createSlice({
       state.data = action.payload;
     });
     builder.addCase(fetchCarts.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message || '';
+    });
+    builder.addCase(removeCart.pending, state => {
+      state.status = 'pending';
+    });
+    builder.addCase(removeCart.fulfilled, (state, action) => {
+      state.status = 'idle';
+      state.data.carts = state.data.carts.filter(
+        cart => cart.id !== action.payload.id
+      );
+    });
+    builder.addCase(removeCart.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.error.message || '';
     });

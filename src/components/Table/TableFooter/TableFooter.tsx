@@ -1,4 +1,4 @@
-import { openModal } from '../../../redux/features/modalSlice';
+import { openChartModal } from '../../../redux/features/modalSlice';
 import { useAppDispatch } from '../../../redux/hooks';
 import Button from '../../Button/Button';
 import styles from './TableFooter.module.scss';
@@ -11,7 +11,7 @@ const TableFooter = ({ total }: TableFooterProps) => {
   const dispatch = useAppDispatch();
 
   const handleOpenModal = () => {
-    dispatch(openModal());
+    dispatch(openChartModal());
   };
 
   return (
