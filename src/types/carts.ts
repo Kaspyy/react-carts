@@ -25,4 +25,7 @@ export interface Product {
   discountedPrice: number;
 }
 
-export type AddCartProduct = Pick<Product, 'id' | 'quantity'>;
+export interface AddCartPayload {
+  userId: number;
+  products: Pick<Product, 'id' | 'quantity'>[];
+}

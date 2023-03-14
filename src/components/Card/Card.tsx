@@ -21,12 +21,14 @@ const Card = ({ cartId, items, price }: CardProps) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h3>Cart {cartId}</h3>
-        <Button
-          label='Delete'
-          variant='secondary'
-          palette='danger'
-          onClick={handleOpenModal}
-        />
+        {cartId <= 20 && (
+          <Button
+            label='Delete'
+            variant='secondary'
+            palette='danger'
+            onClick={handleOpenModal}
+          />
+        )}
       </div>
       <Link to={`/cart/${cartId}`}>
         <p className={styles.subheader}>Items: {items}</p>

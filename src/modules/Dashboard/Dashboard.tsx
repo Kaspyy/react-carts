@@ -7,7 +7,8 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import styles from './Dashboard.module.scss';
 import Modal from '../../components/Modal/Modal';
 import { closeRemoveCartModal } from '../../redux/features/modalSlice';
-import { removeCart } from '../../redux/features/cartsSlice';
+import { addCart, removeCart } from '../../redux/features/cartsSlice';
+import { generateCart } from './helpers';
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
@@ -27,6 +28,10 @@ const Dashboard = () => {
     handleCloseModal();
   };
 
+  const handleAddCart = () => {
+    dispatch(addCart(generateCart()));
+  };
+
   return (
     <div
       className={`${styles.container} ${removeCartModalOpenId && styles.blur}`}
@@ -40,9 +45,11 @@ const Dashboard = () => {
           <h2>Carts</h2>
         </div>
         <div className={styles.button_container}>
-          <Link to='/add-cart'>
-            <Button label='Add Cart' variant='secondary' />
-          </Link>
+          <Button
+            label='Add Cart'
+            variant='secondary'
+            onClick={handleAddCart}
+          />
         </div>
       </div>
       <div className={styles.container}>
