@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Carts } from '../../types/carts';
+import { AddCartPayload, Carts } from '../../types/carts';
 
 export interface CartState {
   data: Pick<Carts, 'carts' | 'total'>;
@@ -36,19 +36,28 @@ export const removeCart = createAsyncThunk(
   }
 );
 
+export const addCart = createAsyncThunk(
+  'carts/addCart',
+  async (cart: AddCartPayload) => {
+    const response = await fetch('https://dummyjson.com/carts/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cart),
+    });
+    const data = await response.json();
+
+    data.id = Date.now();
+
+    return data;
+  }
+);
+
 export const cartsSlice = createSlice({
   name: 'cart',
   initialState,
-  reducers: {
-    getCart: (state, action) => {
-      const cart = state.data.carts.find(cart => cart.id === action.payload.id);
-      if (cart) {
-      }
-    },
-    addCart: (state, action) => {
-      state.data.carts.push(action.payload);
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchCarts.pending, state => {
       state.status = 'pending';
@@ -74,9 +83,18 @@ export const cartsSlice = createSlice({
       state.status = 'failed';
       state.error = action.error.message || '';
     });
+    builder.addCase(addCart.pending, state => {
+      state.status = 'pending';
+    });
+    builder.addCase(addCart.fulfilled, (state, action) => {
+      state.status = 'idle';
+      state.data.carts.push(action.payload);
+    });
+    builder.addCase(addCart.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message || '';
+    });
   },
 });
-
-export const { addCart } = cartsSlice.actions;
 
 export default cartsSlice.reducer;
