@@ -3,7 +3,7 @@ import { useAppSelector } from '../../redux/hooks';
 import Button from '../Button/Button';
 import styles from './Modal.module.scss';
 
-ReactModal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') ReactModal.setAppElement('#root');
 
 export interface ModalProps {
   onClickCancel: () => void;
