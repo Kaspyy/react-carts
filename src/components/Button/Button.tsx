@@ -27,5 +27,3 @@ const Button = ({
 };
 
 export default Button;
-
-// napisz testy jednostkowe dla komponentu Button w następnej linii
