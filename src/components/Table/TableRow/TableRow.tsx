@@ -15,10 +15,8 @@ const TableRow = ({
 }: TableRowProps) => {
   return (
     <div className={styles.table_row}>
-      <div className={styles.product_column}>
-        {title}
-        <div>{quantity}</div>
-      </div>
+      <div className={styles.product_column}>{title}</div>
+      <div>{quantity}</div>
       <div className={styles.price_column}>
         <span className={styles.discounted_price}>${discountedPrice}</span>
         <span className={styles.original_price}>${price}</span>

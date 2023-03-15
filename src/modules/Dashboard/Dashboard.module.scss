@@ -10,6 +10,10 @@
 }
 
 .header_container {
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
   display: flex;
   justify-content: space-between;
   align-items: center;

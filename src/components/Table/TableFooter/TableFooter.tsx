@@ -16,7 +16,7 @@ const TableFooter = ({ total }: TableFooterProps) => {
 
   return (
     <div className={styles.table_footer}>
-      <Button label='Price Chart' onClick={handleOpenModal} />
+      <Button label='Price Chart' onClick={handleOpenModal} variant='primary' />
       <p className={styles.total}>${total}</p>
     </div>
   );

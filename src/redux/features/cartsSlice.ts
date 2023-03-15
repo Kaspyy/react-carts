@@ -48,7 +48,8 @@ export const addCart = createAsyncThunk(
     });
     const data = await response.json();
 
-    data.id = Date.now();
+    const random = Math.floor(Math.random() * 1000);
+    data.id = data.id + random;
 
     return data;
   }
