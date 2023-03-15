@@ -6,6 +6,10 @@
 }
 
 .table_footer .total {
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
