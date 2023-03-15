@@ -67,9 +67,9 @@ export const cartsSlice = createSlice({
       state.status = 'idle';
       state.data = action.payload;
     });
-    builder.addCase(fetchCarts.rejected, (state, action) => {
+    builder.addCase(fetchCarts.rejected, state => {
       state.status = 'failed';
-      state.error = action.error.message || '';
+      state.error = 'Failed to fetch carts';
     });
     builder.addCase(removeCart.pending, state => {
       state.status = 'pending';
@@ -80,9 +80,9 @@ export const cartsSlice = createSlice({
         cart => cart.id !== action.payload.id
       );
     });
-    builder.addCase(removeCart.rejected, (state, action) => {
+    builder.addCase(removeCart.rejected, state => {
       state.status = 'failed';
-      state.error = action.error.message || '';
+      state.error = 'Failed to remove cart';
     });
     builder.addCase(addCart.pending, state => {
       state.status = 'pending';
@@ -91,9 +91,9 @@ export const cartsSlice = createSlice({
       state.status = 'idle';
       state.data.carts.push(action.payload);
     });
-    builder.addCase(addCart.rejected, (state, action) => {
+    builder.addCase(addCart.rejected, state => {
       state.status = 'failed';
-      state.error = action.error.message || '';
+      state.error = 'Failed to add cart';
     });
   },
 });
