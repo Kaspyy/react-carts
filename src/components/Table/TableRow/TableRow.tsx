@@ -18,8 +18,10 @@ const TableRow = ({
       <div className={styles.product_column}>{title}</div>
       <div>{quantity}</div>
       <div className={styles.price_column}>
-        <span className={styles.discounted_price}>${discountedPrice}</span>
         <span className={styles.original_price}>${price}</span>
+        <span className={styles.discounted_price}>
+          ${(discountedPrice / quantity).toFixed(0)}
+        </span>
       </div>
     </div>
   );
