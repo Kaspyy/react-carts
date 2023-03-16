@@ -50,7 +50,7 @@ const Chart = ({ chartData }: ChartProps) => {
       },
       {
         label: 'Price',
-        data: chartData?.products.map(product => product.price),
+        data: chartData?.products.map(product => product.total),
         borderColor: 'rgb(54, 162, 235)',
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
       },
