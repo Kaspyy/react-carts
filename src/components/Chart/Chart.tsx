@@ -44,8 +44,11 @@ const Chart = ({ chartData }: ChartProps) => {
     datasets: [
       {
         label: 'Discounted Price',
-        data: chartData?.products.map(product =>
-          (product.discountedPrice / product.quantity).toFixed(0)
+        data: chartData?.products.map(
+          product =>
+            (product.discountedPrice / product.quantity).toFixed(0) as
+              | number
+              | string
         ),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',

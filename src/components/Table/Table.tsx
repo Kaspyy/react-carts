@@ -23,7 +23,7 @@ const Table = ({ data }: TableProps) => {
           />
         ))}
       </div>
-      <TableFooter total={data?.total} />
+      <TableFooter total={data?.discountedTotal} />
     </div>
   );
 };

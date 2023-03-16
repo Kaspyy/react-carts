@@ -59,7 +59,7 @@ const Dashboard = () => {
             key={cart.id}
             cartId={cart.id}
             items={cart.totalProducts}
-            price={cart.total}
+            price={cart.discountedTotal}
           />
         ))}
       </div>
