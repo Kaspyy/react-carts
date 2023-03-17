@@ -30,7 +30,7 @@ A simple React app to display a list of carts, their items and a price chart.
 
 ## Screenshots
 
-<img width="1800" alt="image" src="https://user-images.githubusercontent.com/50270928/225364366-1dcde26c-dac0-461d-b873-ecf88c191884.png">
-<img width="1800" alt="image" src="https://user-images.githubusercontent.com/50270928/225364465-ab668e3f-a254-49dd-9d2d-f076d4ec11b9.png">
+<img width="1800" alt="image" src="https://user-images.githubusercontent.com/50270928/225859664-d97a4d54-63a1-4f2a-b6ce-24d41dc2aebf.png">
+<img width="1800" alt="image" src="https://user-images.githubusercontent.com/50270928/225859607-ab080e93-f1ff-47cb-8557-d8177a70ccee.png">
 <img width="1800" alt="image" src="https://user-images.githubusercontent.com/50270928/225859237-33da4114-6031-4d1e-82bb-3c77eab8081b.png">
 
