@@ -17,15 +17,7 @@ import styles from './Chart.module.scss';
 import { options } from './config';
 import { Cart } from '../../types/carts';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export interface ChartProps {
   chartData: Cart;
@@ -35,9 +27,7 @@ const Chart = ({ chartData }: ChartProps) => {
   const { chartModalOpen } = useAppSelector(state => state.modal);
   const dispatch = useAppDispatch();
 
-  const labels = [
-    ...new Set(chartData?.products.map((_, index) => `Product ${index + 1}`)),
-  ];
+  const labels = [...new Set(chartData?.products.map((_, index) => `Product ${index + 1}`))];
 
   const data = {
     labels,
@@ -45,10 +35,7 @@ const Chart = ({ chartData }: ChartProps) => {
       {
         label: 'Discounted Price',
         data: chartData?.products.map(
-          product =>
-            (product.discountedPrice / product.quantity).toFixed(0) as
-              | number
-              | string
+          product => (product.discountedPrice / product.quantity).toFixed(0) as number | string,
         ),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -72,8 +59,7 @@ const Chart = ({ chartData }: ChartProps) => {
       onRequestClose={handleCloseModal}
       contentLabel='Price Chart Modal'
       className={styles.modal}
-      overlayClassName='overlay'
-    >
+      overlayClassName='overlay'>
       <div className={styles.modal_content}>
         <div className={styles.modal_header}>
           <h2>Price Chart</h2>

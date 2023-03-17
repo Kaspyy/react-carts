@@ -19,7 +19,7 @@ describe('Card component', () => {
         <BrowserRouter>
           <Card cartId={cartId} items={items} price={price} />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText(`Cart ${cartId}`)).toBeInTheDocument();
@@ -35,7 +35,7 @@ describe('Card component', () => {
         <BrowserRouter>
           <Card cartId={cartId} items={items} price={price} />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     if (cartId <= 20) {
@@ -52,7 +52,7 @@ describe('Card component', () => {
         <BrowserRouter>
           <Card cartId={cartId} items={items} price={price} />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     if (cartId <= 20) {

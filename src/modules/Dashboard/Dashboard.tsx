@@ -12,9 +12,7 @@ import { generateCart } from './helpers';
 const Dashboard = () => {
   const dispatch = useAppDispatch();
   const { data, status, error } = useAppSelector(state => state.carts);
-  const removeCartModalOpenId = useAppSelector(
-    state => state.modal.removeCartModalOpenId
-  );
+  const removeCartModalOpenId = useAppSelector(state => state.modal.removeCartModalOpenId);
 
   const handleCloseModal = () => {
     dispatch(closeRemoveCartModal());
@@ -32,23 +30,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div
-      className={`${styles.container} ${removeCartModalOpenId && styles.blur}`}
-    >
-      <Modal
-        onClickCancel={handleCloseModal}
-        onClickDelete={handleDeleteCart}
-      />
+    <div className={`${styles.container} ${removeCartModalOpenId && styles.blur}`}>
+      <Modal onClickCancel={handleCloseModal} onClickDelete={handleDeleteCart} />
       <div className={styles.header_container}>
         <div className={styles.title}>
           <h2>Carts</h2>
         </div>
         <div className={styles.button_container}>
-          <Button
-            label='Add Cart'
-            variant='secondary'
-            onClick={handleAddCart}
-          />
+          <Button label='Add Cart' variant='secondary' onClick={handleAddCart} />
         </div>
       </div>
       <div className={styles.container}>

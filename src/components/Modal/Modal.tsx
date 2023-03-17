@@ -11,9 +11,7 @@ export interface ModalProps {
 }
 
 const Modal = ({ onClickCancel, onClickDelete }: ModalProps) => {
-  const removeCartModalOpenId = useAppSelector(
-    state => state.modal.removeCartModalOpenId
-  );
+  const removeCartModalOpenId = useAppSelector(state => state.modal.removeCartModalOpenId);
 
   return (
     <ReactModal
@@ -21,20 +19,14 @@ const Modal = ({ onClickCancel, onClickDelete }: ModalProps) => {
       onRequestClose={onClickCancel}
       contentLabel='Price Chart Modal'
       className={styles.modal}
-      overlayClassName='overlay'
-    >
+      overlayClassName='overlay'>
       <div className={styles.modal_content}>
         <div className={styles.modal_header}>
           <h2>Are you sure?</h2>
         </div>
         <div className={styles.button_container}>
           <Button label='Cancel' variant='secondary' onClick={onClickCancel} />
-          <Button
-            label='Delete'
-            variant='primary'
-            palette='danger'
-            onClick={onClickDelete}
-          />
+          <Button label='Delete' variant='primary' palette='danger' onClick={onClickDelete} />
         </div>
       </div>
     </ReactModal>

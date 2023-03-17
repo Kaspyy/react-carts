@@ -8,7 +8,7 @@ describe('Dashboard', () => {
     render(
       <Provider store={store}>
         <Dashboard />
-      </Provider>
+      </Provider>,
     );
   });
 });
