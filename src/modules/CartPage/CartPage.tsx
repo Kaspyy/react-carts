@@ -11,7 +11,7 @@ const CartPage = () => {
   const navigate = useNavigate();
   const chartModalOpen = useAppSelector(state => state.modal.chartModalOpen);
   const cartData = useAppSelector(state =>
-    state.carts.data.carts.find(cart => cart.id.toString() === cartId)
+    state.carts.data.carts.find(cart => cart.id.toString() === cartId),
   );
 
   if (!cartData) {

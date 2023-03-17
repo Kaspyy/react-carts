@@ -29,11 +29,7 @@ export const modalSlice = createSlice({
   },
 });
 
-export const {
-  openChartModal,
-  closeChartModal,
-  openRemoveCartModal,
-  closeRemoveCartModal,
-} = modalSlice.actions;
+export const { openChartModal, closeChartModal, openRemoveCartModal, closeRemoveCartModal } =
+  modalSlice.actions;
 
 export default modalSlice.reducer;

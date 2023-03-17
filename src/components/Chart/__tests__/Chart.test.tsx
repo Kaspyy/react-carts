@@ -60,7 +60,7 @@ describe('Chart', () => {
     render(
       <Provider store={store}>
         <Chart chartData={chartData} />
-      </Provider>
+      </Provider>,
     );
 
     const modalTitle = screen.getByText('Price Chart');
@@ -77,7 +77,7 @@ describe('Chart', () => {
     render(
       <Provider store={store}>
         <Chart chartData={chartData} />
-      </Provider>
+      </Provider>,
     );
 
     const modalCloseButton = screen.getByText('Close');

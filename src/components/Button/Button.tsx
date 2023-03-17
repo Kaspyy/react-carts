@@ -19,8 +19,7 @@ const Button = ({
     <button
       disabled={disabled}
       className={`${styles[variant]} ${styles[palette]}`}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {label}
     </button>
   );

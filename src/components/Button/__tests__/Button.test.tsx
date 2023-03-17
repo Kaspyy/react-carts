@@ -15,9 +15,7 @@ describe('Button component', () => {
   });
 
   it('should render with secondary variant and danger palette when props are passed', () => {
-    const { getByRole } = render(
-      <Button label='Click me' variant='secondary' palette='danger' />
-    );
+    const { getByRole } = render(<Button label='Click me' variant='secondary' palette='danger' />);
     const button = getByRole('button');
 
     expect(button).toBeInTheDocument();

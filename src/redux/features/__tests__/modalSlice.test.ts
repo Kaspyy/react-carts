@@ -25,7 +25,7 @@ describe('modalSlice', () => {
   it('should handle closeChartModal', () => {
     const newState = modalSlice.reducer(
       { ...initialState, chartModalOpen: true },
-      closeChartModal()
+      closeChartModal(),
     );
     expect(newState.chartModalOpen).toBe(false);
   });
@@ -38,7 +38,7 @@ describe('modalSlice', () => {
   it('should handle closeRemoveCartModal', () => {
     const newState = modalSlice.reducer(
       { ...initialState, removeCartModalOpenId: 1 },
-      closeRemoveCartModal()
+      closeRemoveCartModal(),
     );
     expect(newState.removeCartModalOpenId).toBe(null);
   });

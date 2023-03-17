@@ -23,7 +23,7 @@ describe('cartsSlice', () => {
           },
           error: '',
         },
-        { type: 'carts/fetchCarts/pending' }
+        { type: 'carts/fetchCarts/pending' },
       );
 
       expect(actual).toEqual({
@@ -59,7 +59,7 @@ describe('cartsSlice', () => {
             ],
             total: 100,
           },
-        }
+        },
       );
 
       expect(actual).toEqual({
@@ -92,7 +92,7 @@ describe('cartsSlice', () => {
         {
           type: 'carts/fetchCarts/rejected',
           payload: '',
-        }
+        },
       );
 
       expect(actual).toEqual({
